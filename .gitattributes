@@ -1,6 +1,0 @@
-# Ne pas compter le CSS compilé / minifié
-public/build/*.css linguist-vendored
-public/assets/*.css linguist-vendored
-
-# Si tu as du code généré ou des vendor
-vendor/* linguist-vendored
