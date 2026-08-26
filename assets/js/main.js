@@ -9,6 +9,11 @@
 (function() {
   "use strict";
 
+  /** Keep copyright years current without manual yearly edits. */
+  document.querySelectorAll('.current-year').forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */

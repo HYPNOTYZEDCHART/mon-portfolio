@@ -25,7 +25,7 @@
       thisForm.querySelector('.error-message').classList.remove('d-block');
       thisForm.querySelector('.sent-message').classList.remove('d-block');
 
-      let formData = new FormData( thisForm );
+      let formData = new URLSearchParams(new FormData(thisForm));
 
       if ( recaptcha ) {
         if(typeof grecaptcha !== "undefined" ) {
@@ -53,7 +53,10 @@
     fetch(action, {
       method: 'POST',
       body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'X-Requested-With': 'XMLHttpRequest'
+      }
     })
     .then(response => {
       if( response.ok ) {

@@ -1,42 +1,77 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+declare(strict_types=1);
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Method Not Allowed');
+}
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+$config_path = __DIR__ . '/config.local.php';
+if (!is_file($config_path)) {
+    http_response_code(503);
+    exit('La messagerie SMTP n’est pas encore configurée.');
+}
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  isset($_POST['phone']) && $contact->add_message($_POST['phone'], 'Phone');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+$smtp = require $config_path;
+if (!is_array($smtp)) {
+    http_response_code(500);
+    exit('Configuration SMTP invalide.');
+}
 
-  echo $contact->send();
-?>
+$name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$subject = trim($_POST['subject'] ?? '');
+$message = trim($_POST['message'] ?? '');
+$website = trim($_POST['website'] ?? '');
+
+$string_length = static function (string $value): int {
+    return function_exists('mb_strlen') ? mb_strlen($value) : strlen($value);
+};
+
+if ($website !== '') {
+    http_response_code(400);
+    exit('Requête invalide.');
+}
+
+if ($name === '' || $subject === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)
+    || $string_length($name) > 100 || $string_length($subject) > 150 || $string_length($message) > 5000) {
+    http_response_code(400);
+    exit('Veuillez remplir correctement tous les champs.');
+}
+
+if (empty($smtp['host']) || empty($smtp['username']) || empty($smtp['password']) || empty($smtp['from_email'])) {
+    http_response_code(503);
+    exit('La messagerie SMTP n’est pas encore configurée.');
+}
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+try {
+    $mailer = new PHPMailer(true);
+    $mailer->isSMTP();
+    $mailer->Host = (string) $smtp['host'];
+    $mailer->SMTPAuth = true;
+    $mailer->Username = (string) $smtp['username'];
+    $mailer->Password = (string) $smtp['password'];
+    $mailer->SMTPSecure = (string) ($smtp['encryption'] ?? PHPMailer::ENCRYPTION_STARTTLS);
+    $mailer->Port = (int) ($smtp['port'] ?? 587);
+    $mailer->CharSet = PHPMailer::CHARSET_UTF8;
+
+    $mailer->setFrom((string) $smtp['from_email'], (string) ($smtp['from_name'] ?? 'Portfolio Becaye Doumbouya'));
+    $mailer->addAddress((string) ($smtp['to_email'] ?? $smtp['from_email']));
+    $mailer->addReplyTo($email, $name);
+    $mailer->isHTML(false);
+    $mailer->Subject = $subject;
+    $mailer->Body = "Nom : {$name}\nEmail : {$email}\n\n{$message}";
+    $mailer->send();
+
+    echo 'OK';
+} catch (Exception $exception) {
+    error_log('Erreur SMTP du formulaire de contact : ' . $exception->getMessage());
+    http_response_code(500);
+    exit('Le message n’a pas pu être envoyé pour le moment.');
+}
