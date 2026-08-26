@@ -27,6 +27,12 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light') {
+      document.documentElement.classList.add('light-theme');
+    }
+  </script>
+
   <!-- =======================================================
   * Template Name: Craftivo
   * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
@@ -60,6 +66,11 @@
   </ul>
   <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>
+
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+        <i class="bi bi-sun" id="theme-toggle-icon"></i>
+      </button>
 
 
 
@@ -166,20 +177,18 @@
               <img src="assets/img/services/S1.jpg" alt="Web Development" class="img-fluid main-image">
               <div class="image-overlay">
                <div class="tech-stack">
-  <span class="tech-item">Java</span>
-  <span class="tech-item">Spring Boot</span>
-  <span class="tech-item">Angular</span>
-  <span class="tech-item">TypeScript</span>
-  <span class="tech-item">Flutter</span>
-  <span class="tech-item">Dart</span>
-  <span class="tech-item">MongoDB</span>
-  <span class="tech-item">MySQL</span>
   <span class="tech-item">PHP</span>
   <span class="tech-item">Symfony</span>
+  <span class="tech-item">Twig</span>
+  <span class="tech-item">Node.js</span>
+  <span class="tech-item">JavaScript</span>
+  <span class="tech-item">MySQL</span>
+  <span class="tech-item">MariaDB</span>
+  <span class="tech-item">SQL</span>
+  <span class="tech-item">Tailwind CSS</span>
+  <span class="tech-item">Bootstrap</span>
   <span class="tech-item">UI/UX Design</span>
   <span class="tech-item">Figma</span>
-  <span class="tech-item">Adobe XD</span>
-
 </div>
 
               </div>
@@ -283,29 +292,21 @@
   <div class="tech-categories">
 
     <div class="tech-category">
-      <h5>Frontend Web</h5>
+      <h5>Frontend</h5>
       <div class="tech-tags">
-        <span>Angular</span>
-        <span>TypeScript</span>
-        <span>Bootstrap</span>
+        <span>HTML &amp; CSS</span>
+        <span>Twig</span>
         <span>Tailwind CSS</span>
-        <span>HTML / CSS</span>
-      </div>
-    </div>
-
-    <div class="tech-category">
-      <h5>Mobile</h5>
-      <div class="tech-tags">
-        <span>Flutter</span>
-        <span>Dart</span>
+        <span>Bootstrap</span>
+        <span>JavaScript</span>
       </div>
     </div>
 
     <div class="tech-category">
       <h5>Backend</h5>
       <div class="tech-tags">
-        <span>Java (Spring Boot)</span>
         <span>PHP (Symfony)</span>
+        <span>Node.js</span>
         <span>REST API</span>
       </div>
     </div>
@@ -313,19 +314,19 @@
     <div class="tech-category">
       <h5>Base de Données</h5>
       <div class="tech-tags">
-        <span>MongoDB</span>
         <span>MySQL</span>
-        <span>PostgreSQL</span>
-        <span>Firebase</span>
+        <span>MariaDB</span>
+        <span>SQL</span>
       </div>
     </div>
 
     <div class="tech-category">
-      <h5>Outils & Collaboration</h5>
+      <h5>Outils &amp; Design</h5>
       <div class="tech-tags">
-        <span>Git & GitHub</span>
+        <span>Git &amp; GitHub</span>
+        <span>Composer &amp; npm</span>
         <span>Figma</span>
-         <span>Trello</span>
+        <span>UI/UX Design</span>
       </div>
     </div>
 

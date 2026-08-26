@@ -15,6 +15,38 @@
   });
 
   /**
+   * Dark/Light Theme Toggle
+   */
+  const themeToggleIcon = document.querySelector('#theme-toggle-icon');
+  const themeToggleBtn = document.querySelector('#theme-toggle');
+
+  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    document.documentElement.classList.add('light-theme');
+    if (themeToggleIcon) {
+      themeToggleIcon.classList.replace('bi-sun', 'bi-moon');
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      document.documentElement.classList.toggle('light-theme');
+      const isLight = document.body.classList.contains('light-theme');
+      localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+      
+      if (themeToggleIcon) {
+        if (isLight) {
+          themeToggleIcon.classList.replace('bi-sun', 'bi-moon');
+        } else {
+          themeToggleIcon.classList.replace('bi-moon', 'bi-sun');
+        }
+      }
+    });
+  }
+
+  /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {

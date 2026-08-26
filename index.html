@@ -27,6 +27,12 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light') {
+      document.documentElement.classList.add('light-theme');
+    }
+  </script>
+
   <!-- =======================================================
   * Template Name: Craftivo
   * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
@@ -76,6 +82,11 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+        <i class="bi bi-sun" id="theme-toggle-icon"></i>
+      </button>
+
 
     </div>
   </header>
@@ -85,13 +96,13 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/person/WhatsApp Image 2026-05-15 at 00.52.50.jpeg" class="img-fluid w-50 vh-20" alt="Portrait de Becaye Doumbouya" data-aos="fade-in">
+      <img src="assets/img/person/becaye-avatar.jpeg" class="img-fluid w-50 vh-20" alt="Portrait de Becaye Doumbouya" data-aos="fade-in">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
             <h2>Salut, je suis Becaye Doumbouya</h2>
-            <p>Je suis ... <span class="typed" data-typed-items="étudiant en Informatique de Gestion, développeur web en formation, passionné par les bases de données et les métiers de Data"></span><span class="typed-cursor" aria-hidden="true"></span></p>
+            <p>Je suis <span class="typed" data-typed-items="étudiant en Informatique de Gestion, développeur web en formation, passionné par les bases de données et les métiers de Data"></span><span class="typed-cursor" aria-hidden="true"></span></p>
             <div class="social-links">
               <a href="mailto:doumbiabecaye7@gmail.com" aria-label="Envoyer un email"><i class="bi bi-envelope"></i></a>
               <a href="https://www.linkedin.com/in/becaye-doumbouya-b90947411/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -122,7 +133,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
             <div class="profile-card">
               <div class="profile-header">
                 <div class="profile-avatar">
-                  <img src="assets/img/profile/WhatsApp Image 2026-05-15 at 00.52.50.jpeg" class="img-fluid" alt="Becaye Doumbouya">
+                  <img src="assets/img/profile/becaye-avatar.jpeg" class="img-fluid" alt="Becaye Doumbouya">
                   <div class="status-indicator"></div>
                 </div>
                 <h3>Becaye Doumbouya</h3>
@@ -456,7 +467,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
                         <span class="year-range">2021 - 2022</span>
                         <span class="degree-level">BFEM</span>
                       </div>
-                      <h4>BFEEM</h4>
+                      <h4>BFEM</h4>
                       <p class="institution">CSPA</p>
                       <div class="achievement">
                         <i class="bi bi-award"></i>
@@ -600,7 +611,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
 
                 </div>
                 <div class="col-lg-4 text-lg-end text-center">
-                  <a href="service-details.html" class="cta-btn">Lancer Votre Projet .....</a>
+                  <a href="service-details.html" class="cta-btn">Lancer Votre Projet</a>
                 </div>
               </div>
             </div>
@@ -646,7 +657,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
                       <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox portfolio-link">
                         <i class="bi bi-plus-lg"></i>
                       </a>
-                      <a href="portfolio-details.html" class="portfolio-details" aria-label="Voir les détails du projet">
+                      <a href="projet-ecommerce.html" class="portfolio-details" aria-label="Voir les détails du projet">
                         <i class="bi bi-arrow-right"></i>
                       </a>
                     </div>
@@ -675,7 +686,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
                       <a href="assets/img/portfolio/portfolio-2.webp" class="glightbox portfolio-link">
                         <i class="bi bi-plus-lg"></i>
                       </a>
-                      <a href="portfolio-details.html" class="portfolio-details" aria-label="Voir les détails du projet">
+                      <a href="projet-freelance.html" class="portfolio-details" aria-label="Voir les détails du projet">
                         <i class="bi bi-arrow-right"></i>
                       </a>
                     </div>
@@ -704,7 +715,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
                       <a href="assets/img/portfolio/portfolio-3.webp" class="glightbox portfolio-link">
                         <i class="bi bi-plus-lg"></i>
                       </a>
-                      <a href="portfolio-details.html" class="portfolio-details" aria-label="Voir les détails du projet">
+                      <a href="projet-crm.html" class="portfolio-details" aria-label="Voir les détails du projet">
                         <i class="bi bi-arrow-right"></i>
                       </a>
                     </div>
@@ -810,7 +821,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Chargement ...... </div>
+                  <div class="loading">Chargement... </div>
                   <div class="error-message"></div>
                   <div class="sent-message">Votre message a été envoyé avec succès. Merci !</div>
 
@@ -888,7 +899,7 @@ Je suis étudiant en Licence Informatique de Gestion à l’UCAO ISG Saint Miche
   <div class="container copyright text-center mt-4">
     <p>© <span class="current-year">2026</span> <strong class="px-1 sitename">Becaye Doumbouya</strong> - Tous droits réservés</p>
     <div class="credits">
-      Designed by <a href="">Becaye Doumbouya</a>
+      Designed by <a href="https://github.com/HYPNOTYZEDCHART" target="_blank" rel="noopener noreferrer">Becaye Doumbouya</a>
     </div>
   </div>
 

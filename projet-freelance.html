@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Projets - Becaye Doumbouya</title>
-  <meta name="description" content="Présentation des projets web de Becaye Doumbouya.">
-  <meta name="keywords" content="portfolio, développement web, PHP, Symfony, Node.js">
+  <title>Plateforme Freelance - Becaye Doumbouya</title>
+  <meta name="description" content="Détails du projet de plateforme de recherche de développeurs freelances de Becaye Doumbouya.">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Node.js, freelance, développement web">
 
   <!-- Favicons -->
   <link href="assets/img/logo.webp" rel="icon">
@@ -27,13 +27,11 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Craftivo
-  * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
-  * Updated: Oct 04 2025 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light') {
+      document.documentElement.classList.add('light-theme');
+    }
+  </script>
 </head>
 
 <body class="portfolio-details-page">
@@ -42,8 +40,6 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <img src="assets/img/logo.webp" alt="Logo de Becaye Doumbouya">
         <h1 class="sitename">Becaye</h1>
       </a>
@@ -60,6 +56,11 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+        <i class="bi bi-sun" id="theme-toggle-icon"></i>
+      </button>
+
       <a class="btn-getstarted" href="index.html#contact">Me contacter</a>
 
     </div>
@@ -73,10 +74,10 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Accueil</a></li>
-            <li class="current">Détails des projets</li>
+            <li class="current">Détails du projet</li>
           </ol>
         </nav>
-        <h1>Détails des projets</h1>
+        <h1>Plateforme Freelances</h1>
       </div>
     </div><!-- End Page Title -->
 
@@ -85,9 +86,9 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Portfolio</span>
-        <h2>Projets sélectionnés</h2>
-        <p>Une sélection de projets académiques et personnels illustrant mes compétences en développement web.</p>
+        <span class="subtitle">Détails</span>
+        <h2>Plateforme Freelances</h2>
+        <p>Mise en relation et recherche simplifiée de profils techniques freelances.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -117,19 +118,11 @@
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.webp" alt="Portfolio Image" class="img-fluid">
+                  <img src="assets/img/portfolio/portfolio-2.webp" alt="Plateforme Freelance Accueil" class="img-fluid">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-6.webp" alt="Portfolio Image" class="img-fluid">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-9.webp" alt="Portfolio Image" class="img-fluid">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-11.webp" alt="Portfolio Image" class="img-fluid">
+                  <img src="assets/img/portfolio/portfolio-5.webp" alt="Plateforme Freelance Liste" class="img-fluid">
                 </div>
 
               </div>
@@ -137,46 +130,46 @@
             </div>
 
             <div class="portfolio-content" data-aos="fade-up" data-aos-delay="200">
-              <h2>Applications web orientées utilisateurs</h2>
+              <h2>Conception d'un site de mise en relation de développeurs</h2>
 
               <div class="meta-info">
-                <span class="date"><i class="bi bi-calendar"></i> 2025–2026</span>
+                <span class="date"><i class="bi bi-calendar"></i> 2025</span>
                 <span class="category"><i class="bi bi-tag"></i> Développement web</span>
-                <span class="client"><i class="bi bi-mortarboard"></i> Projets académiques et personnels</span>
+                <span class="client"><i class="bi bi-mortarboard"></i> Projet réalisé</span>
               </div>
 
               <p>
-                Ces réalisations couvrent une boutique e-commerce, une plateforme de mise en relation de développeurs freelances et un CRM en préparation. Elles sont conçues avec une attention particulière portée à l’ergonomie, à la structure des données et à la performance.
+                Ce projet est une plateforme web moderne qui permet à des entreprises ou des particuliers de rechercher des profils de développeurs freelances qualifiés. Il met à disposition un catalogue structuré de compétences et propose une interface dynamique et épurée.
               </p>
 
               <h3>Objectif</h3>
               <p>
-                Chaque projet répond à un besoin concret : présenter des produits, faciliter la recherche de profils techniques ou centraliser la relation client. Le travail inclut la conception des interfaces, l’intégration front-end et l’implémentation progressive du back-end.
+                L'objectif était de concevoir une interface simple facilitant la sélection des développeurs selon leurs langages de prédilection (JavaScript, PHP, Java, etc.) ou leurs spécialités (frontend, backend, design). La plateforme intègre un serveur léger en Node.js, configuré dans `server.js`, pour structurer les appels de données et assurer le routage de l'application.
               </p>
 
               <div class="highlights-box">
-                <h4>Points clés</h4>
+                <h4>Fonctionnalités clés</h4>
                 <ul>
-                  <li><i class="bi bi-check-circle"></i> Interfaces adaptatives pour mobile et ordinateur</li>
-                  <li><i class="bi bi-check-circle"></i> Architecture pensée pour des données structurées</li>
-                  <li><i class="bi bi-check-circle"></i> Technologies PHP, Symfony, JavaScript et Node.js</li>
-                  <li><i class="bi bi-check-circle"></i> Chargement optimisé des ressources</li>
-                  <li><i class="bi bi-check-circle"></i> Évolution prévue vers des espaces d’administration</li>
+                  <li><i class="bi bi-check-circle"></i> Recherche dynamique de profils par compétences ou mots-clés</li>
+                  <li><i class="bi bi-check-circle"></i> Fiches profils détaillées avec tarifications indicatives</li>
+                  <li><i class="bi bi-check-circle"></i> Système de contact direct intégré pour engager un projet</li>
+                  <li><i class="bi bi-check-circle"></i> Intégration front-end adaptative avec HTML et CSS modernes</li>
+                  <li><i class="bi bi-check-circle"></i> Serveur back-end minimaliste en Node.js</li>
                 </ul>
               </div>
 
               <h3>Approche technique</h3>
               <p>
-                Les interfaces reposent sur HTML, CSS, Bootstrap et JavaScript. Selon le projet, le back-end utilise PHP et Symfony ou Node.js, avec une attention donnée à la maintenabilité, à la validation des données et aux bases de données relationnelles.
+                Le frontend repose sur du HTML sémantique et des règles CSS soignées pour assurer le responsive design sur mobile et tablette. La logique d'interaction dynamique de recherche est écrite en JavaScript côté client. Le backend utilise Node.js avec npm pour gérer l'environnement serveur de façon ultra réactive.
               </p>
 
               <blockquote>
                 <i class="bi bi-quote quote-icon"></i>
                 <p>
-                  Mon objectif est de transformer des besoins concrets en applications simples, fiables et agréables à utiliser.
+                  Travailler sur ce projet m'a permis d'appréhender le fonctionnement de Node.js et la configuration d'un serveur d'API simple pour la transmission de données JSON structurées.
                 </p>
                 <div class="author">
-                  <img src="assets/img/person/M1.jpeg" alt="Becaye Doumbouya">
+                  <img src="assets/img/person/becaye-avatar.jpeg" alt="Becaye Doumbouya">
                   <div class="author-info">
                     <h5>Becaye Doumbouya</h5>
                     <span>Développeur web en formation</span>
@@ -185,7 +178,7 @@
               </blockquote>
 
               <p>
-                Les projets sont continuellement enrichis au fil de ma formation et de mes expérimentations. Pour échanger sur une collaboration, utilisez le formulaire de contact.
+                Le code de cette plateforme est hébergé sur GitHub. N'hésitez pas à consulter mon dépôt pour plus de détails sur le code ou pour me soumettre des questions.
               </p>
 
             </div>
@@ -200,7 +193,7 @@
                 <h3>Informations</h3>
                 <div class="info-item">
                   <span class="label">Contexte</span>
-                  <span class="value">Académique et personnel</span>
+                  <span class="value">Projet académique / personnel</span>
                 </div>
                 <div class="info-item">
                   <span class="label">Catégorie</span>
@@ -208,15 +201,15 @@
                 </div>
                 <div class="info-item">
                   <span class="label">Période</span>
-                  <span class="value">2025–2026</span>
+                  <span class="value">2025</span>
                 </div>
                 <div class="info-item">
                   <span class="label">Statut</span>
-                  <span class="value">En évolution</span>
+                  <span class="value">Terminé</span>
                 </div>
                 <div class="info-item">
                   <span class="label">Technologies</span>
-                  <span class="value">PHP, Symfony, JavaScript, Node.js</span>
+                  <span class="value">HTML, CSS, JavaScript, Node.js</span>
                 </div>
                 <a href="index.html#contact" class="btn-primary">
                   <i class="bi bi-envelope"></i> Me contacter
@@ -224,24 +217,21 @@
               </div>
 
               <div class="share-card" data-aos="fade-up" data-aos-delay="300">
-                <h3>Share This Project</h3>
+                <h3>Partager</h3>
                 <div class="social-links">
-                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                  <a href="#" class="pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="https://github.com/HYPNOTYZEDCHART" target="_blank" class="github"><i class="bi bi-github"></i></a>
+                  <a href="https://www.linkedin.com/in/becaye-doumbouya-b90947411/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
 
               <div class="tags-card" data-aos="fade-up" data-aos-delay="400">
                 <h3>Tags</h3>
                 <div class="tags">
-                  <a href="#">Design</a>
-                  <a href="#">Development</a>
-                  <a href="#">React</a>
-                  <a href="#">UX/UI</a>
-                  <a href="#">Frontend</a>
-                  <a href="#">Backend</a>
+                  <a href="#">JavaScript</a>
+                  <a href="#">Node.js</a>
+                  <a href="#">HTML</a>
+                  <a href="#">CSS</a>
+                  <a href="#">Freelance</a>
                 </div>
               </div>
 
@@ -309,11 +299,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span class="current-year">2026</span> <strong class="px-1 sitename">Becaye Doumbouya</strong> <span>Tous droits réservés</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://github.com/HYPNOTYZEDCHART" target="_blank" rel="noopener noreferrer">Becaye Doumbouya</a>
       </div>
     </div>
 

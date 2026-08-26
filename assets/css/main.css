@@ -39,6 +39,63 @@
   --nav-dropdown-hover-color: #ff4d4f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+/* Light Theme Override */
+body.light-theme, html.light-theme {
+  --background-color: #f7f7f9;
+  --default-color: #2c3e50;
+  --heading-color: #1a252f;
+  --accent-color: #ff4d4f;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  --nav-color: #2c3e50;
+  --nav-hover-color: #ff4d4f;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #2c3e50;
+  --nav-dropdown-hover-color: #ff4d4f;
+}
+
+body.light-theme .light-background {
+  --background-color: #eaecef;
+  --surface-color: #f1f3f5;
+  --default-color: #2c3e50;
+  --heading-color: #1a252f;
+}
+
+body.light-theme .header {
+  --heading-color: #1a252f;
+}
+
+/* Theme Toggle Button styling */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--nav-color);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s, transform 0.3s;
+  order: 3;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+  .theme-toggle {
+    margin-left: 10px;
+    margin-right: 10px;
+    order: 1;
+  }
+}
+
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
