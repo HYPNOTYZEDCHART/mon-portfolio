@@ -21,27 +21,27 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #141414; /* Background color for the entire website, including individual sections */
-  --default-color: #d9d9d9; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ededed; /* Color for headings, subheadings and title throughout the website */
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #2c3e50; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #1a252f; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ff4d4f; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #1c1c1c; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #d9d9d9;  /* The default color of the main navmenu links */
+  --nav-color: #2c3e50;  /* The default color of the main navmenu links */
   --nav-hover-color: #ff4d4f; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #2e2e2e; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #2e2e2e; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #d9d9d9; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #2c3e50; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ff4d4f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
-/* Light Theme Override */
+/* Light Theme Override (kept as backup for compatibility) */
 body.light-theme, html.light-theme {
-  --background-color: #f7f7f9;
+  --background-color: #ffffff;
   --default-color: #2c3e50;
   --heading-color: #1a252f;
   --accent-color: #ff4d4f;
@@ -57,8 +57,8 @@ body.light-theme, html.light-theme {
 }
 
 body.light-theme .light-background {
-  --background-color: #eaecef;
-  --surface-color: #f1f3f5;
+  --background-color: #f7f7f9;
+  --surface-color: #ffffff;
   --default-color: #2c3e50;
   --heading-color: #1a252f;
 }
@@ -67,40 +67,18 @@ body.light-theme .header {
   --heading-color: #1a252f;
 }
 
-/* Theme Toggle Button styling */
+/* Theme Toggle Button styling - Hid it as site is permanently white */
 .theme-toggle {
-  background: none;
-  border: none;
-  color: var(--nav-color);
-  font-size: 20px;
-  cursor: pointer;
-  padding: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s, transform 0.3s;
-  order: 3;
-  margin-left: 20px;
-}
-
-.theme-toggle:hover {
-  color: var(--accent-color);
-  transform: scale(1.1);
-}
-
-@media (max-width: 1200px) {
-  .theme-toggle {
-    margin-left: 10px;
-    margin-right: 10px;
-    order: 1;
-  }
+  display: none !important;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: rgba(41, 41, 41, 0.8);
-  --surface-color: #484848;
+  --background-color: #f7f7f9;
+  --surface-color: #ffffff;
+  --default-color: #2c3e50;
+  --heading-color: #1a252f;
 }
 
 .dark-background {
@@ -260,25 +238,36 @@ h6 {
 }
 
 .scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(20, 20, 20, 0.8);
+  --background-color: rgba(255, 255, 255, 0.9);
+  --heading-color: var(--heading-color);
+  --nav-color: var(--nav-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Index Page Header
+/* Index Page Header (Transparent over dark hero)
 ------------------------------*/
 .index-page .header {
   --background-color: rgba(255, 255, 255, 0);
+  --heading-color: #ffffff;
+  --nav-color: rgba(255, 255, 255, 0.8);
+  --nav-hover-color: var(--accent-color);
 }
 
-/* Index Page Header on Scroll
+/* Index Page Header on Scroll (Light theme when scrolling content)
 ------------------------------*/
 .index-page.scrolled .header {
-  --background-color: rgba(20, 20, 20, 0.8);
+  --background-color: rgba(255, 255, 255, 0.9);
+  --heading-color: var(--heading-color);
+  --nav-color: var(--nav-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /*--------------------------------------------------------------
