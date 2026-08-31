@@ -2,3 +2,6 @@
 /forms/config.local.php
 /.env.local
 .env
+*.exe
+*-recovery-codes*
+*recovery-codes*
