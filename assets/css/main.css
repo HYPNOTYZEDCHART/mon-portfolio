@@ -199,7 +199,8 @@ h6 {
   object-fit: contain;
 }
 
-.header .logo h1 {
+.header .logo h1,
+.header .logo .sitename {
   font-size: 30px;
   margin: 0;
   font-weight: 400;
@@ -249,7 +250,8 @@ h6 {
     margin-right: 6px;
   }
 
-  .header .logo h1 {
+  .header .logo h1,
+  .header .logo .sitename {
     font-size: 22px;
   }
 
@@ -2707,7 +2709,8 @@ section,
   gap: 10px;
 }
 
-.portfolio-details .sidebar .tags-card .tags a {
+.portfolio-details .sidebar .tags-card .tags a,
+.portfolio-details .sidebar .tags-card .tags span {
   padding: 8px 16px;
   background: color-mix(in srgb, var(--default-color), transparent 95%);
   color: var(--default-color);
@@ -2718,7 +2721,8 @@ section,
   text-decoration: none;
 }
 
-.portfolio-details .sidebar .tags-card .tags a:hover {
+.portfolio-details .sidebar .tags-card .tags a:hover,
+.portfolio-details .sidebar .tags-card .tags span:hover {
   background: var(--accent-color);
   color: var(--contrast-color);
   transform: translateY(-2px);
