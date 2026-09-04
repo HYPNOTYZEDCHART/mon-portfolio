@@ -9,13 +9,25 @@ function isValid(value, maxLength) {
   return typeof value === 'string' && value.trim().length > 0 && value.trim().length <= maxLength;
 }
 
+function getRequestData(request) {
+  if (!request.body) {
+    return {};
+  }
+
+  if (typeof request.body === 'string') {
+    return Object.fromEntries(new URLSearchParams(request.body));
+  }
+
+  return request.body;
+}
+
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
     response.setHeader('Allow', 'POST');
     return response.status(405).send('Method Not Allowed');
   }
 
-  const { name = '', email = '', subject = '', message = '', website = '' } = request.body ?? {};
+  const { name = '', email = '', subject = '', message = '', website = '' } = getRequestData(request);
   const cleanName = String(name).trim();
   const cleanEmail = String(email).trim();
   const cleanSubject = String(subject).trim();
