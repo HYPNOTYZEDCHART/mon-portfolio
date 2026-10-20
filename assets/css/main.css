@@ -19,6 +19,18 @@
   --nav-font: "Raleway",  sans-serif;
 }
 
+/* Emil Kowalski Motion & Craft Tokens */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-instant: 120ms;
+  --duration-fast: 160ms;
+  --duration-normal: 220ms;
+  --duration-menu: 250ms;
+}
+
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
@@ -4533,3 +4545,153 @@ section,
     font-size: 14px;
   }
 }
+
+/*--------------------------------------------------------------
+# Emil Kowalski — Design Engineering & High-Craft Motion Layer
+# Rules: Sub-300ms, GPU-only transforms, :active scale feedback,
+# origin-aware popovers, hover gating & prefers-reduced-motion
+--------------------------------------------------------------*/
+
+/* 1. Tactile Button & Press Responsiveness */
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.btn-getstarted,
+.cta-btn,
+.about .profile-actions a,
+.services .cta-box .cta-btn,
+.portfolio-bottom .btn-accent,
+.error-actions a {
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease,
+              color var(--duration-fast) ease !important;
+  will-change: transform;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-accent:active,
+.btn-getstarted:active,
+.cta-btn:active,
+.about .profile-actions a:active,
+.services .cta-box .cta-btn:active,
+.portfolio-bottom .btn-accent:active,
+.error-actions a:active {
+  transform: scale(0.97) !important;
+}
+
+/* 2. Micro-interactions & Social Buttons */
+.about .profile-card .social-connect a,
+.header-social-links a,
+.footer .social-links a,
+.portfolio .portfolio-card .portfolio-image-container .portfolio-overlay .portfolio-actions a {
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) ease,
+              color var(--duration-fast) ease !important;
+}
+
+.about .profile-card .social-connect a:active,
+.header-social-links a:active,
+.footer .social-links a:active,
+.portfolio .portfolio-card .portfolio-image-container .portfolio-overlay .portfolio-actions a:active {
+  transform: scale(0.92) !important;
+}
+
+/* 3. Dropdown Menus: GPU Transforms (No layout shifts) */
+@media (min-width: 1200px) {
+  .navmenu .dropdown ul {
+    top: 100% !important;
+    transform: translateY(8px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity var(--duration-menu) var(--ease-out),
+                transform var(--duration-menu) var(--ease-out),
+                visibility var(--duration-menu) !important;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown:hover > ul {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    visibility: visible !important;
+  }
+}
+
+/* 4. Physical Cards & Depth Elevation */
+.about .profile-card,
+.services .service-card,
+.portfolio .portfolio-card,
+.certifications .certificate-card,
+.resume .resume-item {
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about .profile-card:hover,
+  .services .service-card:hover,
+  .certifications .certificate-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .portfolio .portfolio-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .portfolio .portfolio-card:hover .portfolio-image-container img {
+    transform: scale(1.03) !important;
+  }
+}
+
+.portfolio .portfolio-card .portfolio-image-container img {
+  transition: transform 300ms var(--ease-out) !important;
+}
+
+/* 5. Radar Status Beacon (Hardware-accelerated physical pulse) */
+.about .profile-card .profile-header .profile-avatar .status-indicator {
+  animation: none !important;
+  position: absolute;
+}
+
+.about .profile-card .profile-header .profile-avatar .status-indicator::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.65;
+  animation: radar-wave 2.2s var(--ease-out) infinite;
+  pointer-events: none;
+}
+
+@keyframes radar-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  70%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* 6. Accessibility & Motion Sensitivity Guard */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .about .profile-card .profile-header .profile-avatar .status-indicator::after {
+    animation: none !important;
+    display: none !important;
+  }
+}
