@@ -15,38 +15,6 @@
   });
 
   /**
-   * Dark/Light Theme Toggle
-   */
-  const themeToggleIcon = document.querySelector('#theme-toggle-icon');
-  const themeToggleBtn = document.querySelector('#theme-toggle');
-
-  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-    document.documentElement.classList.add('light-theme');
-    if (themeToggleIcon) {
-      themeToggleIcon.classList.replace('bi-sun', 'bi-moon');
-    }
-  }
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      document.documentElement.classList.toggle('light-theme');
-      const isLight = document.body.classList.contains('light-theme');
-      localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
-      
-      if (themeToggleIcon) {
-        if (isLight) {
-          themeToggleIcon.classList.replace('bi-sun', 'bi-moon');
-        } else {
-          themeToggleIcon.classList.replace('bi-moon', 'bi-sun');
-        }
-      }
-    });
-  }
-
-  /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
@@ -286,5 +254,56 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Becthagoat Signature & Interactive Mode
+   */
+  try {
+    console.log(
+      "%c 🐐 BECTHAGOAT ACTIVATED %c Lead Backend Engineer & Full-Stack Architect ",
+      "background: #10b981; color: #0b0f19; font-weight: 800; font-size: 13px; padding: 4px 8px; border-radius: 4px;",
+      "background: #0f172a; color: #38bdf8; font-weight: 700; font-size: 13px; padding: 4px 8px; border-radius: 4px; border: 1px solid #1e293b;"
+    );
+    console.log(
+      "%c> Systems: NestJS 11 · Prisma ORM · Wave/OM Escrow · Symfony 7 · Next.js 16\n> Protocol: Zero Fluff, 100% Signal, High Concurrency.\n> OpenBoutik API: https://github.com/OpenBoutik-Team/openboutik-api\n> GitHub: https://github.com/HYPNOTYZEDCHART\n> Tip: Click the goat badge or press 'G' to activate GOAT Mode.",
+      "color: #94a3b8; font-family: monospace; font-size: 11px; line-height: 1.6;"
+    );
+
+    function triggerGoatMode() {
+      let toast = document.getElementById('becthagoat-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'becthagoat-toast';
+        toast.className = 'becthagoat-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        toast.innerHTML = '<span class="toast-goat">🐐</span> <span class="toast-text"><strong>Becthagoat Mode</strong> : 100% Signal · Zéro Dette · Architecturé pour la haute charge</span>';
+        document.body.appendChild(toast);
+      }
+      toast.classList.remove('show');
+      void toast.offsetWidth; // Force reflow
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    // Attach click to any goat trigger elements
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.goat-trigger')) {
+        e.preventDefault();
+        triggerGoatMode();
+      }
+    });
+
+    // Keyboard shortcut 'G' (ignore when typing in input/textarea)
+    window.addEventListener('keydown', (e) => {
+      if ((e.key === 'g' || e.key === 'G') && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+        triggerGoatMode();
+      }
+    });
+  } catch (err) {
+    // Non-critical Easter egg
+  }
 
 })();

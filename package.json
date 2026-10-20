@@ -1,5 +1,12 @@
 {
   "name": "becaye-doumbouya-portfolio",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.js",
+    "test:links": "node scripts/verify-links.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
 }

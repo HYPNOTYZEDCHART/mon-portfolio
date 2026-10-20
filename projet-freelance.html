@@ -13,11 +13,11 @@
   <meta property="og:url" content="https://mon-portfolio-five-livid.vercel.app/projet-freelance.html">
   <meta property="og:title" content="Plateforme Freelances — Becaye Doumbouya">
   <meta property="og:description" content="Plateforme de recherche et mise en relation avec des développeurs freelances. HTML, CSS, JavaScript et Node.js.">
-  <meta property="og:image" content="https://mon-portfolio-five-livid.vercel.app/assets/img/portfolio/dev.png">
+  <meta property="og:image" content="https://mon-portfolio-five-livid.vercel.app/assets/img/portfolio/dev.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/logo.webp" rel="icon" type="image/webp">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -34,12 +34,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <script>
-    if (localStorage.getItem('portfolio-theme') === 'light') {
-      document.documentElement.classList.add('light-theme');
-    }
-  </script>
 </head>
 
 <body class="portfolio-details-page">
@@ -48,7 +42,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/logo.jpg" alt="Logo de Becaye Doumbouya">
+        <img src="assets/img/logo.webp" alt="Logo de Becaye Doumbouya" class="img-fluid rounded" width="40" height="40">
         <span class="sitename">Becaye</span>
       </a>
 
@@ -63,11 +57,6 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-        <i class="bi bi-sun" id="theme-toggle-icon"></i>
-      </button>
 
       <a class="btn-getstarted" href="index.html#contact">Me contacter</a>
 
@@ -126,11 +115,11 @@
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/dev.png" alt="Plateforme Freelance Accueil" class="img-fluid">
+                  <img src="assets/img/portfolio/dev.webp" alt="Plateforme Freelance Accueil" class="img-fluid" width="800" height="500">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/dev1.png" alt="Plateforme Freelance Liste" class="img-fluid">
+                  <img src="assets/img/portfolio/dev1.webp" alt="Plateforme Freelance Liste" class="img-fluid" width="800" height="500">
                 </div>
 
               </div>
@@ -177,7 +166,7 @@
                   Travailler sur ce projet m'a permis d'appréhender le fonctionnement de Node.js et la configuration d'un serveur d'API simple pour la transmission de données JSON structurées.
                 </p>
                 <div class="author">
-                  <img src="assets/img/person/becaye-avatar.jpeg" alt="Becaye Doumbouya">
+                  <img src="assets/img/person/becaye-avatar.webp" alt="Becaye Doumbouya" width="60" height="60">
                   <div class="author-info">
                     <h5>Becaye Doumbouya</h5>
                     <span>Développeur web en formation</span>
@@ -186,7 +175,7 @@
               </blockquote>
 
               <p>
-                Le code de cette plateforme est hébergé sur GitHub. N'hésitez pas à consulter mon dépôt pour plus de détails sur le code ou pour me soumettre des questions.
+                Le code de cette plateforme est hébergé sur GitHub. N'hésitez pas à consulter mon profil GitHub pour explorer les différents projets et composants.
               </p>
 
             </div>
@@ -219,7 +208,10 @@
                   <span class="label">Technologies</span>
                   <span class="value">HTML, CSS, JavaScript, Node.js</span>
                 </div>
-                <a href="index.html#contact" class="btn-primary">
+                <a href="https://github.com/HYPNOTYZEDCHART" target="_blank" rel="noopener noreferrer" class="btn-primary mb-3 text-center d-block">
+                  <i class="bi bi-github"></i> Voir le profil GitHub
+                </a>
+                <a href="index.html#contact" class="btn-secondary text-center d-block">
                   <i class="bi bi-envelope"></i> Me contacter
                 </a>
               </div>

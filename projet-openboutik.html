@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>OpenBoutik API - Moteur FinTech & E-commerce Social - Becaye Doumbouya</title>
+  <meta name="description" content="Étude de cas détaillée de l'API OpenBoutik : moteur de séquestre financier Wave/Orange Money, négociation Wakhale, WebSockets et BNPL sous NestJS 11 et Prisma.">
+  <meta name="keywords" content="NestJS 11, TypeScript, Prisma ORM, FinTech, Séquestre Wave, Orange Money, Wakhale, Socket.io, Becaye Doumbouya">
+
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mon-portfolio-five-livid.vercel.app/projet-openboutik.html">
+  <meta property="og:title" content="OpenBoutik API — Moteur FinTech & E-commerce Social (NestJS 11) — Becaye Doumbouya">
+  <meta property="og:description" content="Découvrez l'architecture backend d'OpenBoutik : séquestre financier Wave/OM, négociation Wakhale et WebSockets conçus par Becaye Doumbouya.">
+  <meta property="og:image" content="https://mon-portfolio-five-livid.vercel.app/assets/img/portfolio/openboutik.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.webp" rel="icon" type="image/webp">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo.webp" alt="Logo de Becaye Doumbouya" class="img-fluid rounded" width="40" height="40">
+        <span class="sitename">Becaye</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Accueil</a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="index.html#resume">CV & Expérience</a></li>
+          <li><a href="index.html#services">Compétences</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">Me contacter</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li class="current">Étude de cas FinTech</li>
+          </ol>
+        </nav>
+        <h1>OpenBoutik API</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Étude de Cas Backend</span>
+        <h2>OpenBoutik API — Moteur FinTech & E-commerce Social</h2>
+        <p>Infrastructure backend de confiance pour l'Afrique de l'Ouest : séquestre Wave/Orange Money, négociation Wakhale en temps réel et streaming d'offres.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-8">
+
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "spaceBetween": 0,
+                  "effect": "fade",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/openboutik.webp" alt="OpenBoutik API Architecture Dashboard" class="img-fluid rounded" width="1200" height="800">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="portfolio-content" data-aos="fade-up" data-aos-delay="200">
+              <h2>Rôle & Responsabilités : Lead Backend Engineer (47 Contributions)</h2>
+
+              <div class="meta-info">
+                <span class="date"><i class="bi bi-calendar-check"></i> Projet 2026</span>
+                <span class="category"><i class="bi bi-shield-check"></i> FinTech & Séquestre</span>
+                <span class="client"><i class="bi bi-people"></i> OpenBoutik Team</span>
+              </div>
+
+              <p>
+                <strong>OpenBoutik</strong> est une solution de commerce social et de confiance conçue pour résoudre le problème n°1 du e-commerce informel en Afrique de l'Ouest : l'insécurité des transactions entre acheteurs et vendeurs indépendants. En tant que <strong>Lead Backend Engineer (Dev 3)</strong>, j'ai architecturé et implémenté le cœur transactionnel, la logique de séquestre financier, le système de négociation culturelle (« Wakhale ») et la passerelle WebSockets.
+              </p>
+
+              <h3>1. Le Moteur de Séquestre Financier (Escrow Engine Wave & Orange Money)</h3>
+              <p>
+                Contrairement à un paiement simple, le séquestre impose un état intermédiaire sécurisé où les fonds sont gelés jusqu'à la confirmation effective de livraison :
+              </p>
+              <ul>
+                <li><strong>Idempotence & Anti-Double Dépense :</strong> Intégration d'une clé d'idempotence unique par tentative de paiement (`X-Idempotency-Key`), empêchant tout double débit en cas de coupure réseau ou de retry intempestif.</li>
+                <li><strong>Validation Cryptographique des Webhooks :</strong> Vérification systématique des signatures HMAC-SHA256 émises par les passerelles Mobile Money (Wave / Orange Money) avant tout changement d'état.</li>
+                <li><strong>Machine à États Stricte :</strong> Modélisation des transitions d'état en base de données : <code>FUNDS_HELD &rarr; IN_TRANSIT &rarr; CONFIRMED_DELIVERED &rarr; RELEASED_TO_SELLER</code>, avec possibilité de médiation <code>DISPUTED &rarr; REFUNDED</code>.</li>
+              </ul>
+
+              <div class="highlights-box">
+                <h4>Fonctionnalités Métier & Chiffres Clés</h4>
+                <ul>
+                  <li><i class="bi bi-cpu"></i> <strong>Stack Cœur :</strong> NestJS 11, TypeScript Strict, Prisma ORM, MySQL 8 (Clever Cloud)</li>
+                  <li><i class="bi bi-cash-stack"></i> <strong>Moteur de Séquestre :</strong> Protection bilatérale acheteur/vendeur avec libération des fonds sur preuve de livraison</li>
+                  <li><i class="bi bi-chat-dots"></i> <strong>Digital Wakhale :</strong> Marchandage de prix en temps réel avec coupons dynamiques à usage unique</li>
+                  <li><i class="bi bi-broadcast"></i> <strong>Live Shopping Socket.io :</strong> Passerelle WebSockets <code>/streams</code> avec décompte de stock en temps réel</li>
+                  <li><i class="bi bi-calendar-range"></i> <strong>BNPL (Buy Now Pay Later) :</strong> Découpage d'échéances 3x/4x au centime FCFA près avec batchs cron de nuit</li>
+                </ul>
+              </div>
+
+              <h3>2. Le Système de Négociation Culturelle (« Digital Wakhale »)</h3>
+              <p>
+                Au Sénégal et en Afrique de l'Ouest, le marchandage fait partie intégrante de l'acte d'achat. Pour reproduire cette réalité sans dégrader la gestion des stocks :
+              </p>
+              <p>
+                J'ai conçu un module de négociation bilatérale où l'acheteur peut soumettre une contre-proposition respectant un prix plancher défini par le vendeur. Dès acceptation par le commerçant, le système génère un token cryptographique éphémère (TTL 15 minutes) qui applique automatiquement la remise dans le tunnel de commande sans modifier le prix catalogue global.
+              </p>
+
+              <h3>3. Live Shopping & Passerelle WebSockets (Socket.io)</h3>
+              <p>
+                Pour accompagner les sessions de vente en direct sur les réseaux sociaux, nous avons mis en place une passerelle WebSocket bidirectionnelle sous le namespace <code>/streams</code> :
+              </p>
+              <ul>
+                <li>Isolation par salle (Room) pour chaque boutique en direct.</li>
+                <li>Diffusion ultra-rapide des offres flash et alertes de stock restant avec verrouillage transactionnel au niveau de Prisma.</li>
+                <li>Gestion du délestage et reconnexion automatique en cas d'instabilité réseau mobile (2G/3G/4G).</li>
+              </ul>
+
+              <h3>4. Tests Automatisés & Intégrité des Données</h3>
+              <p>
+                L'intégrité financière ne tolère aucune approximation. Le module de calcul des échéances BNPL et les flux de déblocage de fonds sont couverts par une suite de tests unitaires et d'intégration sous <strong>Jest</strong>, validant le comportement face aux coupures asynchrones et aux erreurs de concurrence (race conditions).
+              </p>
+
+              <blockquote>
+                <i class="bi bi-quote quote-icon"></i>
+                <p>
+                  Bâtir une infrastructure de paiement pour l'Afrique de l'Ouest exige de concevoir pour la résilience : connexions instables, webhooks décalés et réconciliations financières strictes. OpenBoutik API incarne cette rigueur d'ingénierie.
+                </p>
+                <div class="author">
+                  <img src="assets/img/person/becaye-avatar.webp" alt="Becaye Doumbouya" width="60" height="60">
+                  <div class="author-info">
+                    <h5>Becaye Doumbouya</h5>
+                    <span>Lead Backend Engineer & Concepteur Full-Stack</span>
+                  </div>
+                </div>
+              </blockquote>
+
+              <p>
+                Le code source et la documentation Swagger sont consultables directement sur le dépôt GitHub officiel de l'équipe OpenBoutik.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="sidebar" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="info-card">
+                <h3>Fiche Technique</h3>
+                <div class="info-item">
+                  <span class="label">Projet</span>
+                  <span class="value">OpenBoutik API</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Rôle</span>
+                  <span class="value">Lead Backend Engineer (Dev 3)</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Contributions</span>
+                  <span class="value">47 commits & modules clés</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Organisation</span>
+                  <span class="value">OpenBoutik-Team</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Dépôt GitHub</span>
+                  <span class="value"><a href="https://github.com/OpenBoutik-Team/openboutik-api" target="_blank" rel="noopener noreferrer">OpenBoutik-Team/openboutik-api</a></span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Architecture</span>
+                  <span class="value">NestJS 11 Monorepo, Prisma ORM</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Base de Données</span>
+                  <span class="value">MySQL 8 (Clever Cloud)</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Temps Réel</span>
+                  <span class="value">Socket.io (Live Shopping)</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Paiement</span>
+                  <span class="value">Séquestre Wave & Orange Money</span>
+                </div>
+                <a href="https://github.com/OpenBoutik-Team/openboutik-api" target="_blank" rel="noopener noreferrer" class="btn-primary mb-3 text-center d-block">
+                  <i class="bi bi-github"></i> Inspecter le code sur GitHub
+                </a>
+                <a href="index.html#contact" class="btn-secondary text-center d-block">
+                  <i class="bi bi-envelope"></i> Discuter d'un projet similaire
+                </a>
+              </div>
+
+              <div class="share-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Dépôts & Profil</h3>
+                <div class="social-links">
+                  <a href="https://github.com/HYPNOTYZEDCHART" target="_blank" class="github" title="Profil GitHub de Becaye"><i class="bi bi-github"></i></a>
+                  <a href="https://github.com/OpenBoutik-Team/openboutik-api" target="_blank" class="github" title="Dépôt OpenBoutik API"><i class="bi bi-code-slash"></i></a>
+                  <a href="https://www.linkedin.com/in/becaye-doumbouya-b90947411/" target="_blank" class="linkedin" title="Profil LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+
+              <div class="tags-card" data-aos="fade-up" data-aos-delay="400">
+                <h3>Technologies Clés</h3>
+                <div class="tags">
+                  <a href="index.html#portfolio">NestJS 11</a>
+                  <a href="index.html#portfolio">TypeScript</a>
+                  <a href="index.html#portfolio">Prisma ORM</a>
+                  <a href="index.html#portfolio">MySQL 8</a>
+                  <a href="index.html#portfolio">FinTech</a>
+                  <a href="index.html#portfolio">Wave / OM</a>
+                  <a href="index.html#portfolio">Socket.io</a>
+                  <a href="index.html#portfolio">Jest</a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Becaye Doumbouya</strong> <span>Tous droits réservés</span></p>
+      </div>
+      <div class="credits">
+        Conçu & Développé par <a href="index.html">Becaye Doumbouya</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

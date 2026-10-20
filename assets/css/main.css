@@ -1050,24 +1050,22 @@ section,
   margin-bottom: 16px;
 }
 
-.about .profile-card .profile-header .rating {
-  display: flex;
+.about .profile-card .profile-header .badge-status {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 12px;
-}
-
-.about .profile-card .profile-header .rating i {
-  color: #fbbf24;
-  font-size: 16px;
-}
-
-.about .profile-card .profile-header .rating span {
-  margin-left: 8px;
+  gap: 8px;
+  background: color-mix(in srgb, #10b981, transparent 90%);
+  color: #059669;
+  border: 1px solid color-mix(in srgb, #10b981, transparent 75%);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
   font-weight: 600;
-  color: var(--default-color);
-  font-size: 15px;
+  margin-top: 8px;
+}
+
+.about .profile-card .profile-header .badge-status i {
+  font-size: 14px;
 }
 
 .about .profile-card .profile-stats {
@@ -1331,6 +1329,97 @@ section,
   bottom: 0;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   animation: shimmer 2s infinite;
+}
+
+/* Modern Skills Matrix Grid */
+.about .content-wrapper .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .about .content-wrapper .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.about .content-wrapper .skills-grid .skill-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.about .content-wrapper .skills-grid .skill-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.about .content-wrapper .skills-grid .skill-card .card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.about .content-wrapper .skills-grid .skill-card .card-head i {
+  font-size: 24px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.about .content-wrapper .skills-grid .skill-card .card-head h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--heading-color);
+}
+
+.about .content-wrapper .skills-grid .skill-card p {
+  font-size: 13.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.about .content-wrapper .skills-grid .skill-card .skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about .content-wrapper .skills-grid .skill-card .skill-badges .badge-tech {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  color: var(--heading-color);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  transition: all 0.2s ease;
+}
+
+.about .content-wrapper .skills-grid .skill-card .skill-badges .badge-tech.highlight {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 75%);
+}
+
+.about .content-wrapper .skills-grid .skill-card:hover .skill-badges .badge-tech {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 @keyframes pulse {
@@ -4446,8 +4535,127 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Becthagoat Signature & Interactive Mode
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.brand-becthagoat {
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff !important;
+  transition: transform 0.2s ease;
+}
+
+.brand-becthagoat:hover {
+  transform: translateY(-1px);
+}
+
+.goat-signature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.goat-signature-pill:hover {
+  border-color: rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+  transform: scale(1.02);
+}
+
+.goat-badge-pill {
+  font-weight: 700;
+  font-size: 13px;
+  color: #10b981;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.goat-status-text {
+  font-size: 12px;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 10px;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #10b981; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.hero-alias-goat {
+  color: #10b981;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.goat-handle-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+/* Toast Notification for GOAT Mode */
+.becthagoat-toast {
+  position: fixed;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0b1329;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: 1px solid #10b981;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.35);
+  z-index: 99999;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.becthagoat-toast.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.becthagoat-toast .toast-goat {
+  font-size: 18px;
+}
+
+.becthagoat-toast .toast-text strong {
+  color: #10b981;
 }

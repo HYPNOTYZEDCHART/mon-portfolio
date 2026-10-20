@@ -13,11 +13,11 @@
   <meta property="og:url" content="https://mon-portfolio-five-livid.vercel.app/projet-ecommerce.html">
   <meta property="og:title" content="TechLink — Boutique E-commerce (Symfony 7) — Becaye Doumbouya">
   <meta property="og:description" content="Découvrez le projet TechLink : boutique e-commerce complète développée sous Symfony 7 et MariaDB.">
-  <meta property="og:image" content="https://mon-portfolio-five-livid.vercel.app/assets/img/portfolio/matelec.png">
+  <meta property="og:image" content="https://mon-portfolio-five-livid.vercel.app/assets/img/portfolio/matelec.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/logo.webp" rel="icon" type="image/webp">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -34,12 +34,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <script>
-    if (localStorage.getItem('portfolio-theme') === 'light') {
-      document.documentElement.classList.add('light-theme');
-    }
-  </script>
 </head>
 
 <body class="portfolio-details-page">
@@ -48,7 +42,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/logo.jpg" alt="Logo de Becaye Doumbouya">
+        <img src="assets/img/logo.webp" alt="Logo de Becaye Doumbouya" class="img-fluid rounded" width="40" height="40">
         <span class="sitename">Becaye</span>
       </a>
 
@@ -63,11 +57,6 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-        <i class="bi bi-sun" id="theme-toggle-icon"></i>
-      </button>
 
       <a class="btn-getstarted" href="index.html#contact">Me contacter</a>
 
@@ -126,11 +115,11 @@
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/matelec.png" alt="Boutique E-commerce Symfony Accueil" class="img-fluid">
+                  <img src="assets/img/portfolio/matelec.webp" alt="Boutique E-commerce Symfony Accueil" class="img-fluid" width="800" height="500">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/matelec1.png" alt="Boutique E-commerce Symfony Produits" class="img-fluid">
+                  <img src="assets/img/portfolio/matelec1.webp" alt="Boutique E-commerce Symfony Produits" class="img-fluid" width="800" height="500">
                 </div>
 
               </div>
@@ -177,10 +166,10 @@
                   Concevoir cette application sous Symfony m'a permis de structurer des requêtes SQL complexes et de maîtriser les cycles de vie des formulaires et de la sécurité d'un framework professionnel.
                 </p>
                 <div class="author">
-                  <img src="assets/img/person/becaye-avatar.jpeg" alt="Becaye Doumbouya">
+                  <img src="assets/img/person/becaye-avatar.webp" alt="Becaye Doumbouya" width="60" height="60">
                   <div class="author-info">
                     <h5>Becaye Doumbouya</h5>
-                    <span>Développeur web en formation</span>
+                    <span>Lead Backend Engineer &amp; Concepteur Full-Stack</span>
                   </div>
                 </div>
               </blockquote>
@@ -201,11 +190,11 @@
                 <h3>Informations</h3>
                 <div class="info-item">
                   <span class="label">Contexte</span>
-                  <span class="value">Projet personnel</span>
+                  <span class="value">Projet E-Commerce Déployé</span>
                 </div>
                 <div class="info-item">
                   <span class="label">Catégorie</span>
-                  <span class="value">E-commerce / Web</span>
+                  <span class="value">E-commerce / Symfony 7</span>
                 </div>
                 <div class="info-item">
                   <span class="label">Période</span>
@@ -213,18 +202,25 @@
                 </div>
                 <div class="info-item">
                   <span class="label">Statut</span>
-                  <span class="value">Terminé / En ligne</span>
+                  <span class="value">Production Live (Render)</span>
                 </div>
                 <div class="info-item">
                   <span class="label">Lien Live</span>
                   <span class="value"><a href="https://techlink-web.onrender.com/" target="_blank" rel="noopener noreferrer">techlink-web.onrender.com</a></span>
                 </div>
                 <div class="info-item">
-                  <span class="label">Technologies</span>
-                  <span class="value">Symfony 7, PHP, MariaDB, Twig</span>
+                  <span class="label">Dépôt GitHub</span>
+                  <span class="value"><a href="https://github.com/HYPNOTYZEDCHART/-techlink-" target="_blank" rel="noopener noreferrer">HYPNOTYZEDCHART/-techlink-</a></span>
                 </div>
-                <a href="https://techlink-web.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-primary mb-3 text-center d-block">
+                <div class="info-item">
+                  <span class="label">Technologies</span>
+                  <span class="value">Symfony 7, PHP 8.2, MariaDB, Twig</span>
+                </div>
+                <a href="https://techlink-web.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-primary mb-2 text-center d-block">
                   <i class="bi bi-box-arrow-up-right"></i> Visiter le site live
+                </a>
+                <a href="https://github.com/HYPNOTYZEDCHART/-techlink-" target="_blank" rel="noopener noreferrer" class="btn-primary mb-3 text-center d-block" style="background: #24292e; border-color: #24292e;">
+                  <i class="bi bi-github"></i> Code source sur GitHub
                 </a>
                 <a href="index.html#contact" class="btn-secondary text-center d-block">
                   <i class="bi bi-envelope"></i> Me contacter
@@ -270,7 +266,7 @@
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">Becaye Doumbouya</span>
           </a>
-          <p>Portfolio de Becaye Doumbouya, étudiant en Informatique de Gestion et développeur web en formation.</p>
+          <p>Portfolio de Becaye Doumbouya, Lead Backend Engineer &amp; Concepteur Full-Stack.</p>
           <div class="social-links d-flex mt-4">
             <a href="mailto:doumbiabecaye7@gmail.com" aria-label="Envoyer un email"><i class="bi bi-envelope"></i></a>
             <a href="https://github.com/HYPNOTYZEDCHART" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="bi bi-github"></i></a>
