@@ -3,135 +3,238 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CV - Becaye Doumbouya</title>
+  <title>CV - Becaye Doumbouya - Développeur Full-Stack & Software Builder AI-Augmented</title>
   <style>
     @page { size: A4; margin: 0; }
     * { box-sizing: border-box; }
-    body { margin: 0; background: #e9edf2; color: #1f2933; font-family: Arial, sans-serif; }
-    .page { width: 210mm; min-height: 297mm; margin: 0 auto; background: #fff; padding: 17mm 17mm 14mm; }
-    header { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 14px; border-bottom: 4px solid #1e6474; }
-    .avatar { width: 30mm; height: 30mm; flex: 0 0 30mm; border: 3px solid #dce6e8; border-radius: 50%; object-fit: cover; }
-    h1 { margin: 0; color: #164e5b; font-size: 32px; letter-spacing: .5px; }
-    .title { margin: 5px 0 0; color: #d06b3c; font-size: 15px; font-weight: bold; }
-    .contact { text-align: right; color: #425466; font-size: 10.5px; line-height: 1.65; }
-    .contact a { color: inherit; text-decoration: none; }
-    main { display: grid; grid-template-columns: 1.55fr 1fr; gap: 24px; padding-top: 15px; }
-    section { margin-bottom: 15px; }
-    h2 { margin: 0 0 8px; padding-bottom: 5px; border-bottom: 2px solid #dce6e8; color: #164e5b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-    h3 { margin: 0; color: #253b45; font-size: 12.5px; }
-    p { margin: 5px 0 0; font-size: 10.5px; line-height: 1.48; }
-    .muted { color: #667784; font-size: 10px; }
-    .item { margin-bottom: 12px; }
+    body { margin: 0; background: #e2e8f0; color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 10px; line-height: 1.45; }
+    .page { width: 210mm; min-height: 297mm; max-height: 297mm; margin: 0 auto; background: #fff; padding: 14mm 14mm 12mm; overflow: hidden; display: flex; flex-direction: column; }
+    
+    /* Header */
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 12px; border-bottom: 3px solid #0f766e; }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .avatar { width: 26mm; height: 26mm; border-radius: 50%; object-fit: cover; border: 2px solid #14b8a6; }
+    h1 { margin: 0; color: #0f172a; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+    .role-title { margin: 3px 0 0; color: #0f766e; font-size: 12.5px; font-weight: 700; }
+    .role-sub { color: #64748b; font-size: 10px; font-weight: 600; }
+    .contact-info { text-align: right; color: #334155; font-size: 9.5px; line-height: 1.55; }
+    .contact-info a { color: inherit; text-decoration: none; }
+    .contact-info strong { color: #0f766e; }
+
+    /* Layout */
+    main { display: grid; grid-template-columns: 1.58fr 1fr; gap: 20px; padding-top: 12px; flex: 1; }
+    section { margin-bottom: 11px; }
+    section:last-child { margin-bottom: 0; }
+    
+    h2 { margin: 0 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid #cbd5e1; color: #0f766e; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; }
+    h3 { margin: 0; color: #0f172a; font-size: 11px; font-weight: 700; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .date { color: #0f766e; font-size: 9px; font-weight: 700; }
+    .subtext { color: #64748b; font-size: 9px; font-weight: 600; margin: 1px 0 2px; }
+    .desc { margin: 2px 0 0; font-size: 9.2px; line-height: 1.38; color: #334155; text-align: justify; }
+    .tech-stack { color: #0f766e; font-size: 8.5px; font-weight: 700; margin-top: 2px; }
+    .item { margin-bottom: 8px; }
     .item:last-child { margin-bottom: 0; }
-    .education-description { font-size: 9.5px; line-height: 1.35; }
-    .date { float: right; color: #d06b3c; font-size: 10px; font-weight: bold; }
-    ul { margin: 6px 0 0; padding-left: 16px; }
-    li { margin: 4px 0; font-size: 10.5px; line-height: 1.35; }
-    .skills { display: flex; flex-wrap: wrap; gap: 5px; }
-    .skill { padding: 5px 7px; border-radius: 3px; background: #edf5f5; color: #164e5b; font-size: 9.5px; font-weight: bold; }
-    .profile { margin-bottom: 15px; font-size: 11px; line-height: 1.55; }
-    .link { color: #1e6474; word-break: break-word; }
-    @media print { body { background: #fff; } .page { margin: 0; } }
+
+    /* Right column badges */
+    .skills-group { margin-bottom: 8px; }
+    .skills-group-title { font-size: 9px; font-weight: 800; color: #1e293b; margin-bottom: 3px; text-transform: uppercase; }
+    .badges { display: flex; flex-wrap: wrap; gap: 3.5px; }
+    .badge { background: #f1f5f9; color: #0f172a; border: 1px solid #e2e8f0; padding: 2px 5px; border-radius: 3px; font-size: 8.5px; font-weight: 600; }
+    .badge.highlight { background: #ccfbf1; color: #0f766e; border-color: #99f6e4; font-weight: 700; }
+
+    .cert-item { margin-bottom: 5px; }
+    .cert-title { font-weight: 700; font-size: 9.5px; color: #0f172a; }
+    .cert-sub { font-size: 8.5px; color: #64748b; }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 12mm 14mm 10mm; }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <img class="avatar" src="../img/person/becaye-avatar.jpeg" alt="Photo de Becaye Doumbouya">
-      <div>
-        <h1>Becaye Doumbouya</h1>
-        <p class="title">Etudiant en Informatique de Gestion | Developpeur Web en formation</p>
+      <div class="header-left">
+        <img class="avatar" src="../img/profile/becaye-avatar.webp" alt="Photo de Becaye Doumbouya">
+        <div>
+          <h1>Becaye Doumbouya</h1>
+          <div class="role-title">Développeur Full-Stack &amp; Software Builder AI-Augmented</div>
+          <div class="role-sub">Next.js 16 · React 19 · NestJS 11 · FinTech · Symfony 7 · PostgreSQL</div>
+        </div>
       </div>
-      <div class="contact">
-        Dakar, Senegal<br>
-        <a href="tel:+221773956966">+221 77 395 69 66</a><br>
-        <a href="mailto:doumbiabecaye7@gmail.com">doumbiabecaye7@gmail.com</a><br>
-        github.com/HYPNOTYZEDCHART<br>
-        linkedin.com/in/becaye-doumbouya-b90947411/
+      <div class="contact-info">
+        Dakar, Sénégal<br>
+        <strong>Tél :</strong> <a href="tel:+221773956966">+221 77 395 69 66</a><br>
+        <strong>Email :</strong> <a href="mailto:doumbiabecaye7@gmail.com">doumbiabecaye7@gmail.com</a><br>
+        <strong>GitHub :</strong> <a href="https://github.com/HYPNOTYZEDCHART" target="_blank">github.com/HYPNOTYZEDCHART</a><br>
+        <strong>Portfolio :</strong> <a href="https://mon-portfolio-five-livid.vercel.app/" target="_blank">mon-portfolio-five-livid.vercel.app</a>
       </div>
     </header>
 
     <main>
+      <!-- Colonne Gauche : Profil & Projets -->
       <div>
         <section>
-          <h2>Profil</h2>
-          <p class="profile">Etudiant en Licence Informatique de Gestion, passionne par le developpement web, le backend, les bases de donnees et les systemes d'information. Je construis progressivement un profil Full-Stack Developer et j'integre l'IA generative dans mes flux de travail pour accelerer la conception et l'innovation.</p>
+          <h2>Profil Professionnel</h2>
+          <p class="desc">
+            Développeur Full-Stack &amp; Software Builder AI-Augmented alliant rigueur d'ingénierie logicielle (architecture découplée, intégrité transactionnelle, sécurité cryptographique) et haute vélocité d'exécution. Expérience démontrée sur des moteurs FinTech de production (séquestre Wave / Orange Money avec idempotence sous NestJS 11 &amp; Prisma) et des interfaces modernes Next.js 16 / React 19.
+          </p>
         </section>
 
         <section>
-          <h2>Projets</h2>
+          <h2>Réalisations &amp; Projets Majeurs</h2>
+          
           <div class="item">
-            <span class="date">2026</span>
-            <h3>TechLink - Boutique e-commerce</h3>
-            <p class="muted">Projet personnel</p>
-            <p>Boutique de produits electroniques au Senegal avec catalogue, filtres, recherche, comptes clients, panier, commandes et back-office administrateur.</p>
-            <p class="muted">Symfony 7, PHP, MariaDB</p>
+            <div class="item-header">
+              <h3>OpenBoutik API — Moteur FinTech &amp; E-Commerce Social</h3>
+              <span class="date">2026 · Projet Majeur</span>
+            </div>
+            <div class="subtext">OpenBoutik Team · 47 Contributions Clés · Dépôt Public</div>
+            <p class="desc">
+              Conception et développement du cœur transactionnel d'une solution de commerce social africain. Architecture d'un moteur de séquestre financier Wave &amp; Orange Money (garantie d'idempotence, vérification HMAC-SHA256, zéro double dépense). Système de négociation bilatérale « Digital Wakhale » avec coupons éphémères, passerelle WebSockets Socket.io (/streams) pour le Live Shopping et échéancier BNPL 3x/4x couvert par tests automatisés Jest.
+            </p>
+            <div class="tech-stack">Stack : NestJS 11, TypeScript, Prisma ORM, MySQL 8 (Clever Cloud), Socket.io, Jest, Swagger</div>
           </div>
-          <div class="item">
-            <span class="date">2026</span>
-            <h3>Plateforme de developpeurs freelances</h3>
-            <p class="muted">Projet realise</p>
-            <p>Plateforme web de recherche et de mise en relation avec des developpeurs freelances.</p>
-            <p class="muted">HTML, CSS, JavaScript, Node.js, npm</p>
-          </div>
-          <div class="item">
-            <span class="date">2026</span>
-            <h3>CRM - Customer Relationship Management</h3>
-            <p class="muted">Projet personnel en preparation</p>
-            <p>Application destinee a gerer les clients, contacts, interactions commerciales et donnees de la relation client.</p>
-            <p class="muted">Symfony, PHP, Doctrine ORM, MariaDB, Twig, Tailwind CSS</p>
-          </div>
-        </section>
 
-        <section>
-          <h2>Services et interets</h2>
-          <ul>
-            <li>Developpement web et solutions backend</li>
-            <li>Conception d'interfaces UI/UX responsives</li>
-            <li>Bases de donnees et systemes d'information</li>
-            <li>IA generative et assistance au developpement</li>
-          </ul>
+          <div class="item">
+            <div class="item-header">
+              <h3>TechLink — Boutique E-Commerce Symfony 7</h3>
+              <span class="date">2026 · Production Live</span>
+            </div>
+            <div class="subtext">Déployé sur Render (techlink-web.onrender.com)</div>
+            <p class="desc">
+              Plateforme e-commerce complète avec séparation MVC stricte. Catalogue dynamique avec recherche multicritères, panier persistant en session, requêtes Doctrine ORM optimisées sur MariaDB, sécurité des formulaires CSRF et back-office vendeur.
+            </p>
+            <div class="tech-stack">Stack : Symfony 7, PHP 8.2, Doctrine ORM, MariaDB, Twig, Render Cloud</div>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <h3>Sénégal Inox — Vitrine Industrielle Moderne</h3>
+              <span class="date">2026 · Production</span>
+            </div>
+            <div class="subtext">Projet Web Métallurgie &amp; Découpe Laser</div>
+            <p class="desc">
+              Application web réactive pour l'industrie métallurgique conçue sous Next.js 16 (Turbopack), React 19 et Tailwind CSS v4. Architecture orientée performance brute, SEO technique et score 100% Core Web Vitals.
+            </p>
+            <div class="tech-stack">Stack : Next.js 16, React 19, Tailwind CSS v4, Turbopack, TypeScript</div>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <h3>Plateforme Développeurs Freelances</h3>
+              <span class="date">2026 · Projet Web</span>
+            </div>
+            <div class="subtext">Mise en relation et annuaire technique</div>
+            <p class="desc">
+              Plateforme web dédiée à la recherche et à la mise en relation avec des développeurs indépendants, avec recherche contextuelle et API backend Node.js.
+            </p>
+            <div class="tech-stack">Stack : JavaScript ES6+, Node.js, HTML5, CSS3, REST API</div>
+          </div>
         </section>
       </div>
 
+      <!-- Colonne Droite : Formation, Compétences & Certifications -->
       <aside>
         <section>
-          <h2>Formation</h2>
+          <h2>Parcours Académique</h2>
           <div class="item">
-            <span class="date">Depuis 2025</span>
-            <h3>Licence Informatique de Gestion</h3>
-            <p class="muted">UCAO ISG Saint Michel - Dakar</p>
-            <p class="education-description">Formation pluridisciplinaire en programmation, génie logiciel, bases de données, data et IA, systèmes et réseaux, gestion et méthodes professionnelles.</p>
+            <div class="item-header">
+              <h3>Licence Informatique de Gestion</h3>
+              <span class="date">Depuis 2025</span>
+            </div>
+            <div class="subtext">UCAO ISG Saint Michel — Dakar</div>
+            <p class="desc">Génie logiciel, architectures applicatives, bases de données relationnelles, systèmes et réseaux.</p>
           </div>
+
           <div class="item">
-            <span class="date">2024 - 2025</span>
-            <h3>Baccalaureat STEG</h3>
-            <p class="muted">CSPA</p>
+            <div class="item-header">
+              <h3>Baccalauréat STEG</h3>
+              <span class="date">2024 - 2025</span>
+            </div>
+            <div class="subtext">CSPA · Économie &amp; Gestion</div>
           </div>
+
           <div class="item">
-            <span class="date">2021 - 2022</span>
-            <h3>BFEM</h3>
-            <p class="muted">CSPA</p>
+            <div class="item-header">
+              <h3>BFEM</h3>
+              <span class="date">2021 - 2022</span>
+            </div>
+            <div class="subtext">CSPA · Brevet de Fin d'Études Moyennes</div>
           </div>
+
           <div class="item">
-            <span class="date">2015 - 2016</span>
-            <h3>CFEE</h3>
-            <p class="muted">Keur Mère Teresa</p>
+            <div class="item-header">
+              <h3>CFEE</h3>
+              <span class="date">2015 - 2016</span>
+            </div>
+            <div class="subtext">Keur Mère Teresa · Certificat d'Études Élémentaires</div>
           </div>
         </section>
 
         <section>
-          <h2>Competences</h2>
-          <div class="skills">
-            <span class="skill">PHP</span><span class="skill">Symfony</span><span class="skill">Twig</span><span class="skill">JavaScript</span><span class="skill">Node.js</span><span class="skill">HTML / CSS</span><span class="skill">SQL</span><span class="skill">MySQL</span><span class="skill">MariaDB</span><span class="skill">Bootstrap</span><span class="skill">Tailwind CSS</span><span class="skill">Git / GitHub</span><span class="skill">Composer</span><span class="skill">IA generative</span>
+          <h2>Compétences Techniques</h2>
+          
+          <div class="skills-group">
+            <div class="skills-group-title">Backend &amp; FinTech</div>
+            <div class="badges">
+              <span class="badge highlight">NestJS 11</span>
+              <span class="badge highlight">TypeScript</span>
+              <span class="badge highlight">Symfony 7</span>
+              <span class="badge">PHP 8.2+</span>
+              <span class="badge highlight">Prisma ORM</span>
+              <span class="badge">Doctrine</span>
+              <span class="badge">Séquestre Wave/OM</span>
+              <span class="badge">Socket.io</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Frontend &amp; SSR</div>
+            <div class="badges">
+              <span class="badge highlight">Next.js 16</span>
+              <span class="badge highlight">React 19</span>
+              <span class="badge highlight">Tailwind v4</span>
+              <span class="badge">Turbopack</span>
+              <span class="badge">JavaScript ES6+</span>
+              <span class="badge">Bootstrap 5</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Bases de Données &amp; Data</div>
+            <div class="badges">
+              <span class="badge highlight">PostgreSQL 16</span>
+              <span class="badge highlight">MySQL 8 / MariaDB</span>
+              <span class="badge">MERISE</span>
+              <span class="badge">Transactions atomiques</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Outils, Cloud &amp; IA</div>
+            <div class="badges">
+              <span class="badge highlight">Git &amp; GitHub</span>
+              <span class="badge highlight">Tests Jest</span>
+              <span class="badge">Clever Cloud</span>
+              <span class="badge">Render / Vercel</span>
+              <span class="badge highlight">IA Générative</span>
+            </div>
           </div>
         </section>
 
         <section>
-          <h2>Liens</h2>
-          <p><strong>GitHub</strong><br><span class="link">github.com/HYPNOTYZEDCHART</span></p>
-          <p><strong>LinkedIn</strong><br><span class="link">linkedin.com/in/becaye-doumbouya-b90947411/</span></p>
-          <p><strong>Instagram</strong><br><span class="link">instagram.com/ptitjr_becaye_dmy/</span></p>
+          <h2>Certifications</h2>
+          <div class="cert-item">
+            <div class="cert-title">IBM SkillsBuild — IA Générative</div>
+            <div class="cert-sub">Fondamentaux &amp; Ingénierie (2026)</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-title">IBM SkillsBuild — Éthique de l'IA</div>
+            <div class="cert-sub">Gouvernance &amp; Usage Responsable (2026)</div>
+          </div>
         </section>
       </aside>
     </main>
